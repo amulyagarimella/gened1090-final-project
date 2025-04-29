@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+
+@font-face {
+    font-family: "Regimen";
+    src: local("Regimen"), url("../public/fonts/Regimen.otf") format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+:root {
+    --color-fd-background: #f0f0f0;
+    --color-fd-foreground: #1a1a1a;
+    --color-fd-primary: #0ea5e9;
+}
+
+.dark {
+  --color-fd-background: #ffe7c9;
+  --color-fd-primary: #352613;
+  --color-fd-foreground: #352613;
+  --color-fd-accent: #927e63;
+  --color-fd-muted: #927e63;
+  --color-fd-secondary: #927e63;
+  --color-fd-card: #e0c5a0;
+  --color-fd-accent-foreground: #fcebd4;
+  --color-fd-muted-foreground: #7d6e5c;
+  --color-fd-popover: #ffe7c9;
+  --color-fd-popover-foreground: #883624;
+  --color-fd-card-foreground: #883624;
+  
+}
+
+.dark #nd-sidebar {
+  --color-fd-muted-foreground: #594b38;
+}
+
+.dark #button {
+  --color-fd-secondary: #856234;
+  --color: red;
+}
+
+
+@layer base {
+    .dark {
+      --font-primary: "Regimen", "Tagesschrift";
+    }
+    body {
+      font-family: var(--font-primary);
+      color: var(--color-fd-foreground); 
+    }
+    a {
+      color: var(--color-fd-primary);
+    }
+    .dark .cap { 
+      color: rgb(142, 13, 13); 
+      text-transform: capitalize; 
+    }
+    .dark h1 { 
+      color: rgb(142, 13, 13); 
+      text-transform: capitalize; 
+    }
+}
+
+main:has(> main#titlepage){
+  background-image: url('https://orion-uploads.openroadmedia.com/lg_5e8457fa2c8f-trota-of-salerno-feature.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+  background-color:rgba(255, 255, 255, 0.75);
+}
